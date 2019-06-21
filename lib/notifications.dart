@@ -75,12 +75,12 @@ List<NotificationModel> listMentionsData = [
   ),
 ];
 
-class Notifications extends StatefulWidget{
+class Notifications extends StatefulWidget {
   @override
   _NotificationsState createState() => _NotificationsState();
 }
 
-class _NotificationsState extends State<Notifications>{
+class _NotificationsState extends State<Notifications> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -90,15 +90,16 @@ class _NotificationsState extends State<Notifications>{
           child: Scaffold(
             appBar: PreferredSize(
                 child: Container(
-                  child: Padding(padding: const EdgeInsets.all(16.0),
-                  child: TabBar(
-                      unselectedLabelColor: Colors.black45,
-                      labelColor: Colors.white,
-                      indicator: CustomTabIndicator(),
-                      tabs: <Widget>[
-                    Tab(text: "All"),
-                    Tab(text: "Mentions"),
-                  ])),
+                  child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: TabBar(
+                          unselectedLabelColor: Colors.grey,
+                          labelColor: Colors.white,
+                          indicator: CustomTabIndicator(),
+                          tabs: <Widget>[
+                            Tab(text: "All"),
+                            Tab(text: "Mentions"),
+                          ])),
                 ),
                 preferredSize: Size.fromHeight(kToolbarHeight)),
             body: TabBarView(children: <Widget>[
@@ -118,19 +119,17 @@ class _NotificationsState extends State<Notifications>{
     );
   }
 
-  Widget _buildListTile(NotificationModel notifyModel){
+  Widget _buildListTile(NotificationModel notifyModel) {
     return Card(
       child: ListTile(
-        leading: CircleAvatar(
-          backgroundImage:
-          NetworkImage(notifyModel.profileUrl),
-        ),
-        title: Text(
-            "${notifyModel.name} ${notifyModel.userName}"),
-        subtitle: Text(notifyModel.message),
-        onLongPress: () {
-          print("long press");
-        }),
+          leading: CircleAvatar(
+            backgroundImage: NetworkImage(notifyModel.profileUrl),
+          ),
+          title: Text("${notifyModel.name} ${notifyModel.userName}"),
+          subtitle: Text(notifyModel.message),
+          onLongPress: () {
+            print("long press");
+          }),
     );
   }
 }
@@ -158,8 +157,8 @@ class _CustomPainter extends BoxPainter {
 
     final indicatorHeight = 30.0;
     final Rect rect = Offset(
-        offset.dx, (configuration.size.height / 2) - indicatorHeight / 2) &
-    Size(configuration.size.width, indicatorHeight);
+            offset.dx, (configuration.size.height / 2) - indicatorHeight / 2) &
+        Size(configuration.size.width, indicatorHeight);
     final Paint paint = Paint();
     paint.color = Colors.blueAccent;
     paint.style = PaintingStyle.fill;
