@@ -69,12 +69,24 @@ class _HomeState extends State<Home> {
               onDismissed: (both) {},
               background: Card(
                 child: Container(
-                  alignment: Alignment.center,
+                  alignment: Alignment.centerLeft,
+                  padding: EdgeInsets.only(left: 20.0),
                   color: Colors.blueAccent,
                   child: Icon(
                     Icons.remove_red_eye,
                     color: Colors.white,
                   ),
+                ),
+              ),
+              secondaryBackground: Card(
+                child: Container(
+                  alignment: Alignment.centerRight,
+                  padding: EdgeInsets.only(right: 20.0),
+                  color: Colors.blueAccent,
+                  child: Icon(
+                    Icons.remove_red_eye,
+                    color: Colors.white,
+                  )
                 ),
               ),
               child: Card(
