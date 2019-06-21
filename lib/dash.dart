@@ -26,6 +26,7 @@ class _MyDashboardState extends State<MyDashboard> {
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         onTap: onTabTapped,
+        selectedItemColor: Colors.blueAccent,
         elevation: 0,
         currentIndex: _currentIndex,
         items: [
