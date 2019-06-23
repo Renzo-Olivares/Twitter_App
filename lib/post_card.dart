@@ -22,46 +22,88 @@ class _CardPostState extends State<CardPost> {
     // TODO: implement build
     return widget.full
         ? Card(
-            child: FadeTransition(
-                opacity: widget.animation,
-                child: Column(
-                  children: <Widget>[
-                    ListTile(
-                      onTap: () => _onTouch(context),
-                      leading: InkWell(
-                        onTap: () => _onTap(context),
-                        child: CircleAvatar(
-                          backgroundImage: NetworkImage(widget.post.profileUrl),
-                        ),
-                      ),
-                      title:
-                          Text("${widget.post.name} ${widget.post.userName}"),
-                      subtitle: Text(widget.post.post),
-                      onLongPress: () {
-                        print("long press");
-                      },
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+            child: widget.animation != null
+                ? FadeTransition(
+                    opacity: widget.animation,
+                    child: Column(
                       children: <Widget>[
-                        Spacer(),
-                        Spacer(),
-                        IconButton(
-                          icon: Icon(Icons.mode_comment),
+                        ListTile(
+                          onTap: () => _onTouch(context),
+                          leading: InkWell(
+                            onTap: () => _onTap(context),
+                            child: CircleAvatar(
+                              backgroundImage:
+                                  NetworkImage(widget.post.profileUrl),
+                            ),
+                          ),
+                          title: Text(
+                              "${widget.post.name} ${widget.post.userName}"),
+                          subtitle: Text(widget.post.post),
+                          onLongPress: () {
+                            print("long press");
+                          },
                         ),
-                        Spacer(),
-                        IconButton(icon: Icon(Icons.import_export)),
-                        Spacer(),
-                        IconButton(icon: Icon(Icons.favorite)),
-                        Spacer(),
-                        IconButton(
-                          icon: Icon(Icons.share),
-                        ),
-                        Spacer(),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Spacer(),
+                            Spacer(),
+                            IconButton(
+                              icon: Icon(Icons.mode_comment),
+                            ),
+                            Spacer(),
+                            IconButton(icon: Icon(Icons.import_export)),
+                            Spacer(),
+                            IconButton(icon: Icon(Icons.favorite)),
+                            Spacer(),
+                            IconButton(
+                              icon: Icon(Icons.share),
+                            ),
+                            Spacer(),
+                          ],
+                        )
                       ],
-                    )
-                  ],
-                )))
+                    ))
+                : Column(
+                    children: <Widget>[
+                      ListTile(
+                        onTap: () => _onTouch(context),
+                        leading: InkWell(
+                          onTap: () => _onTap(context),
+                          child: CircleAvatar(
+                            backgroundImage:
+                                NetworkImage(widget.post.profileUrl),
+                          ),
+                        ),
+                        title:
+                            Text("${widget.post.name} ${widget.post.userName}"),
+                        subtitle: Text(widget.post.post),
+                        onLongPress: () {
+                          print("long press");
+                        },
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Spacer(),
+                          Spacer(),
+                          IconButton(
+                            icon: Icon(Icons.mode_comment),
+                          ),
+                          Spacer(),
+                          IconButton(icon: Icon(Icons.import_export)),
+                          Spacer(),
+                          IconButton(icon: Icon(Icons.favorite)),
+                          Spacer(),
+                          IconButton(
+                            icon: Icon(Icons.share),
+                          ),
+                          Spacer(),
+                        ],
+                      )
+                    ],
+                  ),
+          )
         : Card(
             child: ListTile(
               onTap: () => _onTouch(context),
