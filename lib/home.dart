@@ -81,7 +81,7 @@ class _HomeState extends State<Home> {
                         color: Colors.white,
                       )),
                 ),
-                child: CardPost(animation, listData[index]));
+                child: CardPost(animation: animation, post: listData[index], full: true));
           },
         ),
       ),

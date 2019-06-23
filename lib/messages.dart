@@ -1,41 +1,34 @@
 import 'package:flutter/material.dart';
+import 'post_card.dart';
+import 'postmodel.dart';
 
-class MessageModel {
-  String message;
-  String profileUrl;
-  String userName;
-  String name;
-
-  MessageModel({this.message, this.profileUrl, this.userName, this.name});
-}
-
-List<MessageModel> listData = [
-  MessageModel(
-    message: "How's it going bro",
+List<PostModel> listData = [
+  PostModel(
+    post: "How's it going bro",
     userName: "@Goku",
     name: "Son Goku",
     profileUrl: "https://avatarfiles.alphacoders.com/782/78200.png",
   ),
-  MessageModel(
-    message: "Want to train today?",
+  PostModel(
+    post: "Want to train today?",
     userName: "@PrinceofAllSaiyans",
     name: "Vegeta",
     profileUrl: "https://avatarfiles.alphacoders.com/739/73989.jpg",
   ),
-  MessageModel(
-    message: "Want to study tomorrow?",
+  PostModel(
+    post: "Want to study tomorrow?",
     userName: "@Gohan",
     name: "Son Gohan",
     profileUrl: "https://avatarfiles.alphacoders.com/153/153624.jpg",
   ),
-  MessageModel(
-    message: "You forgot your wallet at my place again.",
+  PostModel(
+    post: "You forgot your wallet at my place again.",
     userName: "@DemonKing",
     name: "Piccolo",
     profileUrl: "https://avatarfiles.alphacoders.com/652/65280.jpg",
   ),
-  MessageModel(
-    message: "We should hangout with Gaara soon",
+  PostModel(
+    post: "We should hangout with Gaara soon",
     userName: "@Hokage",
     name: "Naruto Uzumaki",
     profileUrl: "https://avatarfiles.alphacoders.com/946/94610.jpg",
@@ -84,21 +77,8 @@ class _MessagesState extends State<Messages> {
                   ),
                 ),
               ),
-              child: Card(
-                  child: FadeTransition(
-                opacity: animation,
-                child: ListTile(
-                  leading: CircleAvatar(
-                    backgroundImage: NetworkImage(listData[index].profileUrl),
-                  ),
-                  title: Text(
-                      "${listData[index].name} ${listData[index].userName}"),
-                  subtitle: Text(listData[index].message),
-                  onLongPress: () {
-                    print("long press");
-                  },
-                ),
-              )),
+              child: CardPost(
+                  animation: animation, post: listData[index], full: false, message: true,),
             );
           },
         ),

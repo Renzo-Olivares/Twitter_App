@@ -190,7 +190,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       initialItemCount: listofPosts.length,
       key: _listKey,
       itemBuilder: (BuildContext context, int index, Animation animation) {
-        return CardPost(animation, listofPosts[index]);
+        return CardPost(animation: animation, post: listofPosts[index], full: true);
       },
     );
   }

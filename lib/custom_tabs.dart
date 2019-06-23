@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'postmodel.dart';
+import 'post_card.dart';
 
 class CustomTab extends StatefulWidget {
   final int length;
@@ -40,17 +41,7 @@ class _CustomTabState extends State<CustomTab> {
   }
 
   Widget _buildListTile(PostModel post) {
-    return Card(
-      child: ListTile(
-          leading: CircleAvatar(
-            backgroundImage: NetworkImage(post.profileUrl),
-          ),
-          title: Text("${post.name} ${post.userName}"),
-          subtitle: Text(post.post),
-          onLongPress: () {
-            print("long press");
-          }),
-    );
+    return CardPost(post: post, full: false);
   }
 }
 
