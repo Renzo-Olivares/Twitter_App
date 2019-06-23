@@ -61,7 +61,7 @@ class _ProfileDrawerState extends State<ProfileDrawer> {
             title: Text("Lists"),
           ),
           ListTile(
-            leading: Icon(Icons.bookmark_border),
+            leading: Icon(Icons.bookmark),
             title: Text("Bookmarks"),
           ),
           ListTile(
