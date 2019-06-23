@@ -13,11 +13,43 @@ class _ProfileDrawerState extends State<ProfileDrawer> {
       child: Column(
         children: <Widget>[
           UserAccountsDrawerHeader(
-            accountName: Text("Saitama"),
-            accountEmail: Text("@OPMan"),
-            currentAccountPicture: CircleAvatar(
-              backgroundImage: NetworkImage(
-                  "https://avatarfiles.alphacoders.com/491/49114.jpg"),
+            currentAccountPicture: Align(
+              alignment: Alignment.centerLeft,
+              child: CircleAvatar(
+                radius: 30,
+                backgroundImage: NetworkImage(
+                    "https://avatarfiles.alphacoders.com/491/49114.jpg"),
+              ),
+            ),
+            accountName: Padding(
+              padding: const EdgeInsets.only(top: 40),
+              child: Row(
+                children: <Widget>[
+                  Text("Saitama"),
+                  Spacer(),
+                  Icon(Icons.arrow_drop_down),
+                ],
+              ),
+            ),
+            accountEmail: Column(
+              children: <Widget>[
+                Align(
+                  child: Text("@OPMan"),
+                  alignment: Alignment.centerLeft,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: Row(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.only(right: 10),
+                        child: Text("0 Following"),
+                      ),
+                      Text("100M Followers"),
+                    ],
+                  ),
+                )
+              ],
             ),
           ),
           ListTile(
