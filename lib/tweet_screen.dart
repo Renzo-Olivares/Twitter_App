@@ -11,7 +11,6 @@ class _TweetScreenState extends State<TweetScreen>{
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,
         centerTitle: true,
         title: Text('Tweet'),
       ),

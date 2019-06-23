@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'avatar_appbar.dart';
 
 class Discover extends StatefulWidget {
   @override
@@ -10,11 +11,7 @@ class _DiscoverState extends State<Discover> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        centerTitle: true,
-        title: Text('Discover'),
-      ),
+      appBar: AvatarAppBar("Discover"),
     );
   }
 }

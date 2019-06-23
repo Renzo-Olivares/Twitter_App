@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'post_card.dart';
 import 'postmodel.dart';
+import 'avatar_appbar.dart';
 
 List<String> tabList = [
   "All",
@@ -102,11 +103,7 @@ class _NotificationsState extends State<Notifications> {
               )
             ]),
           )),
-      appBar: AppBar(
-        elevation: 0,
-        centerTitle: true,
-        title: Text('Notifications'),
-      ),
+      appBar: AvatarAppBar("Notifications"),
     );
   }
 

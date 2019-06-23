@@ -11,7 +11,6 @@ class _DMScreenState extends State<DMScreen>{
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,
         centerTitle: true,
         title: Text('@username'),
       ),

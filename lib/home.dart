@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'post_card.dart';
 import 'postmodel.dart';
+import 'avatar_appbar.dart';
 
 List<PostModel> listData = [
   PostModel(
@@ -47,11 +48,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        centerTitle: true,
-        title: Text('Home'),
-      ),
+      appBar: AvatarAppBar("Home"),
       body: SafeArea(
         child: AnimatedList(
           initialItemCount: listData.length,
@@ -81,7 +78,8 @@ class _HomeState extends State<Home> {
                         color: Colors.white,
                       )),
                 ),
-                child: CardPost(animation: animation, post: listData[index], full: true));
+                child: CardPost(
+                    animation: animation, post: listData[index], full: true));
           },
         ),
       ),

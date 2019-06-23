@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'post_card.dart';
 import 'postmodel.dart';
+import 'avatar_appbar.dart';
 
 List<PostModel> listData = [
   PostModel(
@@ -83,7 +84,7 @@ class _MessagesState extends State<Messages> {
           },
         ),
       ),
-      appBar: AppBar(elevation: 0, centerTitle: true, title: Text('Messages')),
+      appBar: AvatarAppBar("Messages"),
     );
   }
 }
