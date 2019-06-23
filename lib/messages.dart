@@ -42,12 +42,12 @@ List<MessageModel> listData = [
   ),
 ];
 
-class Messages extends StatefulWidget{
+class Messages extends StatefulWidget {
   @override
   _MessagesState createState() => _MessagesState();
 }
 
-class _MessagesState extends State<Messages>{
+class _MessagesState extends State<Messages> {
   final GlobalKey<AnimatedListState> _listKey = GlobalKey();
 
   @override
@@ -86,27 +86,24 @@ class _MessagesState extends State<Messages>{
               ),
               child: Card(
                   child: FadeTransition(
-                      opacity: animation,
-                      child:  ListTile(
-                        leading: CircleAvatar(
-                          backgroundImage:
-                          NetworkImage(listData[index].profileUrl),
-                        ),
-                        title: Text(
-                            "${listData[index].name} ${listData[index].userName}"),
-                        subtitle: Text(listData[index].message),
-                        onLongPress: () {
-                          print("long press");
-                        },),
-                  )),
+                opacity: animation,
+                child: ListTile(
+                  leading: CircleAvatar(
+                    backgroundImage: NetworkImage(listData[index].profileUrl),
+                  ),
+                  title: Text(
+                      "${listData[index].name} ${listData[index].userName}"),
+                  subtitle: Text(listData[index].message),
+                  onLongPress: () {
+                    print("long press");
+                  },
+                ),
+              )),
             );
           },
         ),
       ),
-      appBar: AppBar(
-          elevation: 0,
-          centerTitle: true,
-          title: Text('Messages')),
+      appBar: AppBar(elevation: 0, centerTitle: true, title: Text('Messages')),
     );
   }
 }
