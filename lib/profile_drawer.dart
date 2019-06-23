@@ -52,31 +52,37 @@ class _ProfileDrawerState extends State<ProfileDrawer> {
               ],
             ),
           ),
-          ListTile(
-            leading: Icon(Icons.person),
-            title: Text("Profile"),
-          ),
-          ListTile(
-            leading: Icon(Icons.list),
-            title: Text("Lists"),
-          ),
-          ListTile(
-            leading: Icon(Icons.bookmark),
-            title: Text("Bookmarks"),
-          ),
-          ListTile(
-            leading: Icon(Icons.flash_on),
-            title: Text("Moments"),
-          ),
-          ListTile(
-            leading: Icon(Icons.person_add),
-            title: Text("Follower Requests"),
-          ),
-          ListTile(
-            title: Text("Settings & Privacy"),
-          ),
-          ListTile(
-            title: Text("About"),
+          Flexible(
+            child: ListView(
+              children: <Widget>[
+                ListTile(
+                  leading: Icon(Icons.person),
+                  title: Text("Profile"),
+                ),
+                ListTile(
+                  leading: Icon(Icons.list),
+                  title: Text("Lists"),
+                ),
+                ListTile(
+                  leading: Icon(Icons.bookmark),
+                  title: Text("Bookmarks"),
+                ),
+                ListTile(
+                  leading: Icon(Icons.flash_on),
+                  title: Text("Moments"),
+                ),
+                ListTile(
+                  leading: Icon(Icons.person_add),
+                  title: Text("Follower Requests"),
+                ),
+                ListTile(
+                  title: Text("Settings & Privacy"),
+                ),
+                ListTile(
+                  title: Text("About"),
+                ),
+              ],
+            ),
           ),
         ],
       ),
