@@ -61,9 +61,9 @@ class _MyDashboardState extends State<MyDashboard> {
         type: BottomNavigationBarType.fixed,
         showSelectedLabels: false,
         showUnselectedLabels: false,
+        iconSize: 28,
         onTap: onTabTapped,
         selectedItemColor: Colors.blueAccent,
-        elevation: 0,
         currentIndex: _currentIndex,
         items: [
           BottomNavigationBarItem(
@@ -71,7 +71,7 @@ class _MyDashboardState extends State<MyDashboard> {
             title: Text('Home'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.explore),
+            icon: Icon(Icons.search),
             title: Text('Discover'),
           ),
           BottomNavigationBarItem(

@@ -29,6 +29,9 @@ class _CardPostState extends State<CardPost> {
                       children: <Widget>[
                         ListTile(
                           onTap: () => _onTouch(context),
+                          trailing: InkWell(
+                              onTap: () => _arrowBottomSheet(context),
+                              child: Icon(Icons.arrow_drop_down)),
                           leading: InkWell(
                             onTap: () => _onTap(context),
                             child: CircleAvatar(
@@ -68,6 +71,9 @@ class _CardPostState extends State<CardPost> {
                     children: <Widget>[
                       ListTile(
                         onTap: () => _onTouch(context),
+                        trailing: InkWell(
+                            onTap: () => _arrowBottomSheet(context),
+                            child: Icon(Icons.arrow_drop_down)),
                         leading: InkWell(
                           onTap: () => _onTap(context),
                           child: CircleAvatar(
@@ -123,7 +129,6 @@ class _CardPostState extends State<CardPost> {
   }
 
   void _onTap(BuildContext context) {
-    print("lol");
     if (Navigator.of(context).canPop()) {
       Navigator.of(context).pop();
     }
@@ -134,7 +139,6 @@ class _CardPostState extends State<CardPost> {
   }
 
   void _onTouch(BuildContext context) {
-    print("lol");
     if (Navigator.of(context).canPop()) {
       Navigator.of(context).pop();
     }
@@ -142,5 +146,38 @@ class _CardPostState extends State<CardPost> {
         .push(MaterialPageRoute(builder: (BuildContext context) {
       return widget.message ? DMScreen() : TweetScreen();
     }));
+  }
+
+  void _arrowBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            ListTile(
+              leading: Icon(Icons.content_copy),
+              title: Text('Copy link to Tweet'),
+            ),
+            ListTile(
+              leading: Icon(Icons.person_add),
+              title: Text('Follow/Unfollow @username'),
+            ),
+            ListTile(
+              leading: Icon(Icons.volume_off),
+              title: Text('Mute @username'),
+            ),
+            ListTile(
+              leading: Icon(Icons.block),
+              title: Text('Block @username'),
+            ),
+            ListTile(
+              leading: Icon(Icons.outlined_flag),
+              title: Text('Report Tweet'),
+            ),
+          ],
+        );
+      },
+    );
   }
 }
