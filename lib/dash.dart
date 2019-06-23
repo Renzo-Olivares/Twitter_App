@@ -59,6 +59,8 @@ class _MyDashboardState extends State<MyDashboard> {
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
         onTap: onTabTapped,
         selectedItemColor: Colors.blueAccent,
         elevation: 0,
