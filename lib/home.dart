@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'profile_screen.dart';
 
 class TweetModel {
   String tweet;
@@ -95,9 +96,12 @@ class _HomeState extends State<Home> {
                       child: Column(
                         children: <Widget>[
                           ListTile(
-                            leading: CircleAvatar(
-                              backgroundImage:
-                                  NetworkImage(listData[index].profileUrl),
+                            leading: InkWell(
+                              onTap: () => _onTap(context),
+                              child: CircleAvatar(
+                                backgroundImage:
+                                    NetworkImage(listData[index].profileUrl),
+                              ),
                             ),
                             title: Text(
                                 "${listData[index].name} ${listData[index].userName}"),
@@ -133,5 +137,15 @@ class _HomeState extends State<Home> {
         ),
       ),
     );
+  }
+
+  void _onTap(BuildContext context){
+    print("lol");
+    if(Navigator.of(context).canPop()){
+      Navigator.of(context).pop();
+    }
+    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
+      return ProfileScreen();
+    }));
   }
 }
