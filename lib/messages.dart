@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'post_card.dart';
 import 'postmodel.dart';
 import 'avatar_appbar.dart';
+import 'profile_drawer.dart';
 
 List<PostModel> listData = [
   PostModel(
@@ -48,6 +49,7 @@ class _MessagesState extends State<Messages> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
+      drawer: ProfileDrawer(),
       body: SafeArea(
         child: AnimatedList(
           initialItemCount: listData.length,

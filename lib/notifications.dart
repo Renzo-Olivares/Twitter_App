@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'post_card.dart';
 import 'postmodel.dart';
 import 'avatar_appbar.dart';
+import 'profile_drawer.dart';
 
 List<String> tabList = [
   "All",
@@ -84,6 +85,7 @@ class _NotificationsState extends State<Notifications> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
+      drawer: ProfileDrawer(),
       body: DefaultTabController(
           length: 2,
           child: Scaffold(

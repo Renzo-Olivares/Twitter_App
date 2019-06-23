@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'avatar_appbar.dart';
+import 'profile_drawer.dart';
 
 class Discover extends StatefulWidget {
   @override
@@ -11,6 +12,7 @@ class _DiscoverState extends State<Discover> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
+      drawer: ProfileDrawer(),
       appBar: AvatarAppBar("Discover"),
     );
   }

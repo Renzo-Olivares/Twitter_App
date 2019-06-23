@@ -17,6 +17,7 @@ class _AvatarAppBarState extends State<AvatarAppBar>{
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      automaticallyImplyLeading: false,
       title: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -39,12 +40,6 @@ class _AvatarAppBarState extends State<AvatarAppBar>{
 
 
   void _onTap(BuildContext context) {
-    if (Navigator.of(context).canPop()) {
-      Navigator.of(context).pop();
-    }
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (BuildContext context) {
-      return null;
-    }));
+    Scaffold.of(context).openDrawer();
   }
 }
