@@ -34,15 +34,19 @@ class _AddScreenState extends State<AddScreen> {
           child: Row(
             children: <Widget>[
               IconButton(
+                iconSize: 30,
                 icon: Icon(Icons.photo),
               ),
               IconButton(
+                iconSize: 30,
                 icon: Icon(Icons.gif),
               ),
               IconButton(
+                iconSize: 30,
                 icon: Icon(Icons.poll),
               ),
               IconButton(
+                iconSize: 30,
                 icon: Icon(Icons.location_on),
               ),
             ],
