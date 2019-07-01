@@ -4,6 +4,7 @@ import 'home.dart';
 import 'discover.dart';
 import 'notifications.dart';
 import 'messages.dart';
+import 'add_tweet_screen.dart';
 
 class MyDashboard extends StatefulWidget {
   @override
@@ -44,7 +45,7 @@ class _MyDashboardState extends State<MyDashboard> {
         child: _currentIndex == 3
             ? FloatingActionButton(
                 key: UniqueKey(),
-                onPressed: () {},
+                onPressed: () => _onPressMessage(),
                 child: Transform.rotate(
                   child: Icon(Icons.chat_bubble),
                   angle: math.pi / 2,
@@ -52,7 +53,7 @@ class _MyDashboardState extends State<MyDashboard> {
               )
             : FloatingActionButton(
                 key: UniqueKey(),
-                onPressed: () {},
+                onPressed: () => _onPressTweet(context),
                 child: Icon(Icons.add),
               ),
       ),
@@ -86,6 +87,19 @@ class _MyDashboardState extends State<MyDashboard> {
       ),
     );
   }
+
+  void _onPressTweet(BuildContext context) {
+    if (Navigator.of(context).canPop()) {
+      Navigator.of(context).pop();
+    }
+    Navigator.of(context).push(MaterialPageRoute(
+        builder: (BuildContext context) {
+          return AddScreen();
+        },
+        fullscreenDialog: true));
+  }
+
+  void _onPressMessage() {}
 
   void onTabTapped(int index) {
     setState(() {

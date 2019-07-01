@@ -3,6 +3,7 @@ import 'postmodel.dart';
 import 'profile_screen.dart';
 import 'direct_messages_screen.dart';
 import 'tweet_screen.dart';
+import 'add_tweet_screen.dart';
 
 class CardPost extends StatefulWidget {
   final Animation animation;
@@ -52,6 +53,7 @@ class _CardPostState extends State<CardPost> {
                             Spacer(),
                             Spacer(),
                             IconButton(
+                              onPressed: () => _onComment(context),
                               icon: Icon(Icons.mode_comment),
                             ),
                             Spacer(),
@@ -94,6 +96,7 @@ class _CardPostState extends State<CardPost> {
                           Spacer(),
                           Spacer(),
                           IconButton(
+                            onPressed: () => _onComment(context),
                             icon: Icon(Icons.mode_comment),
                           ),
                           Spacer(),
@@ -136,6 +139,17 @@ class _CardPostState extends State<CardPost> {
         .push(MaterialPageRoute(builder: (BuildContext context) {
       return ProfileScreen();
     }));
+  }
+
+  void _onComment(BuildContext context){
+    if (Navigator.of(context).canPop()) {
+      Navigator.of(context).pop();
+    }
+    Navigator.of(context).push(MaterialPageRoute(
+        builder: (BuildContext context) {
+          return AddScreen(isReply: true,);
+        },
+        fullscreenDialog: true));
   }
 
   void _onTouch(BuildContext context) {

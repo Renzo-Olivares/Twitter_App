@@ -92,7 +92,6 @@ class _NotificationsState extends State<Notifications> {
             appBar: TabBar(
               unselectedLabelColor: Colors.grey,
               labelColor: Colors.white,
-              indicator: CustomTabIndicator(),
               tabs:
                   tabList.map((String tabName) => Tab(text: tabName)).toList(),
             ),
@@ -111,37 +110,5 @@ class _NotificationsState extends State<Notifications> {
 
   Widget _buildListTile(PostModel post, bool fullPost) {
     return CardPost(post: post, full: fullPost);
-  }
-}
-
-class CustomTabIndicator extends Decoration {
-  @override
-  BoxPainter createBoxPainter([onChanged]) {
-    // TODO: implement createBoxPainter
-    return _CustomPainter(this, onChanged);
-  }
-}
-
-class _CustomPainter extends BoxPainter {
-  final CustomTabIndicator decoration;
-
-  _CustomPainter(this.decoration, VoidCallback onChanged)
-      : assert(decoration != null),
-        super(onChanged);
-
-  @override
-  void paint(Canvas canvas, Offset offset, ImageConfiguration configuration) {
-    // TODO: implement paint
-    assert(configuration != null);
-    assert(configuration.size != null);
-
-    final indicatorHeight = 35.0;
-    final Rect rect = Offset(
-            offset.dx, (configuration.size.height / 2) - indicatorHeight / 2) &
-        Size(configuration.size.width, indicatorHeight);
-    final Paint paint = Paint();
-    paint.color = Colors.blueAccent;
-    paint.style = PaintingStyle.fill;
-    canvas.drawRRect(RRect.fromRectAndRadius(rect, Radius.circular(25)), paint);
   }
 }
